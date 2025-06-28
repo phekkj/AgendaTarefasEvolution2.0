@@ -1,3 +1,9 @@
+     //mostra tarefas
+document.addEventListener("DOMContentLoaded", function () {
+  filtrarTarefas();
+  updateStats();
+});
+ 
  // Criar nova tarefa
     function criarTarefa() {
       let tarefa = document.getElementById("nome").value;
