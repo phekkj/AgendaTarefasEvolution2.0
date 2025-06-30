@@ -130,3 +130,27 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("mediumPriorityCount").textContent = medio;
       document.getElementById("lowPriorityCount").textContent = baixo;
     }
+
+    // excluir tarefa
+    function excluirTarefa(index) {
+      let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+      if (confirm("Tem certeza que deseja excluir esta tarefa?")) {
+        tarefas.splice(index, 1);
+        localStorage.setItem("tarefas", JSON.stringify(tarefas));
+        filtrarTarefas();
+        updateStats();
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      initializeSampleData();
+      filtrarTarefas();
+      updateStats();
+
+      // enter na pesquisa
+      document.getElementById("pesquisaTarefa").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+          filtrarTarefas();
+        }
+      });
+    });
