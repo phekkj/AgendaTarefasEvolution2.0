@@ -1,6 +1,5 @@
      //mostra tarefas
 document.addEventListener("DOMContentLoaded", function () {
-  initializeSampleData();
   filtrarTarefas();
   updateStats();
   exibirTarefasConcluidas();
@@ -158,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-      initializeSampleData();
+   
       filtrarTarefas();
       updateStats();
 
